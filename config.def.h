@@ -76,6 +76,8 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "rofi", "-show", "drun", "-show-icons", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
+#include "movestack.c"
+
 	/* modifier                     key        function        argument */
 static Key keys[] = {
 	{ 0,                           XF86XK_AudioLowerVolume,    spawn, {.v = downvol } },  // volume control
@@ -90,6 +92,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },

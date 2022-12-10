@@ -3,4 +3,5 @@
 ## ignoring files
 *.o
 *.orig
+*.rej
 
