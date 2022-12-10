@@ -1,1 +1,4 @@
+## ignore gitignore file
+.gitignore
+## ignoring output file
 *.o
