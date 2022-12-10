@@ -15,7 +15,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {
     "monospace:size=10",
     "WenQuanYi Micro Hei:size=10:type=Regular:antialias=true:autohint=true",
-    "Symbols Nerd Font:pixelsize=14:type=2048-em:antialias:true:autohint=true"
+    "FantasqueSansMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
@@ -30,8 +30,8 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
-
+static const char *tags[] = {"", "", "", "", "",
+                             "", "", "", ""};
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
