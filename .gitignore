@@ -4,4 +4,7 @@
 *.o
 *.orig
 *.rej
+*.1
+
+dwm
 
