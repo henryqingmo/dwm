@@ -36,13 +36,17 @@ typedef struct {
 	const void *cmd;
 } Sp;
 const char *spcmd1[] = {"st", "-n", "spterm", "-g", "120x34", NULL };
-const char *spcmd2[] = {"st", "-n", "spfm", "-g", "144x41", "-e", "ranger", NULL };
-const char *spcmd3[] = {"keepassxc", NULL };
+const char *spcmd2[] = {"st", "-n", "spranger", "-g", "144x41", "-e", "ranger", NULL };
+const char *spcmd3[] = {"st", "-n", "spncmpcpp", "-g", "144x41", "-e", "ncmpcpp", NULL };
+const char *spcmd4[] = {"st", "-n", "sphtop", "-g", "144x41", "-e", "htop", NULL };
+const char *spcmd5[] = {"st", "-n", "spmixer", "-g", "144x41", "-e", "pulsemixer", NULL };
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
 	{"spranger",    spcmd2},
-	{"keepassxc",   spcmd3},
+	{"spncmpcpp",   spcmd3},
+	{"sphtop",		spcmd4},
+	{"spmixer",		spcmd5},
 };
 
 
@@ -62,8 +66,10 @@ static const Rule rules[] = {
 	{ "Alacritty",NULL,    NULL,           0,         0,          1,		   0,		 -1 },
 	{ NULL,      NULL,     "Event Tester", 0,         0,          0,           1,        -1 }, /* xev */
 	{ NULL,		"spterm",  NULL,		   SPTAG(0),  1,		  1,	       0,        -1 },
-	{ NULL,		"spfm",	   NULL,		   SPTAG(1),  1,		  0,	       1,        -1 },
-	{ NULL,		"keepassxc",NULL,		   SPTAG(2),  0,	      0,		   1,        -1 },
+	{ NULL,		"spranger",NULL,		   SPTAG(1),  1,		  0,	       1,        -1 },
+	{ NULL,		"spncmpcpp",NULL,		   SPTAG(2),  1,		  0,	       1,        -1 },
+	{ NULL,		"sphtop",	NULL,		   SPTAG(3),  1,		  0,	       1,        -1 },
+	{ NULL,		"spmixer",	NULL,		   SPTAG(4),  1,		  0,	       1,        -1 },
  	/* class      instance    title       tags mask     isfloating   monitor */
 };
 
@@ -103,6 +109,11 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioLowerVolume,   spawn, {.v = downvol } },  // volume control
 	{ 0,                       	    XF86XK_AudioMute,          spawn, {.v = mutevol } },
 	{ 0,                       		XF86XK_AudioRaiseVolume,   spawn, {.v = upvol } },
+	{ 0,                       		XF86XK_AudioRaiseVolume,   spawn, {.v = upvol } },
+    { MODKEY,						XK_period,				   spawn, {.v = (const char*[]){ "mpc", "next", NULL } } },
+    { MODKEY,						XK_comma,				   spawn, {.v = (const char*[]){ "mpc", "prev", NULL } } },
+	{ MODKEY|ShiftMask,				XK_period,				   spawn, {.v = (const char*[]){ "mpc", "toggle", NULL } } },
+    { MODKEY|ShiftMask,				XK_comma,				   spawn, {.v = (const char*[]){ "mpc", "stop", NULL } } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
@@ -131,7 +142,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,            			XK_y,  	   togglescratch,  {.ui = 0 } },
 	{ MODKEY,            			XK_u,	   togglescratch,  {.ui = 1 } },
-	{ MODKEY,            			XK_x,	   togglescratch,  {.ui = 2 } },
+	{ MODKEY,            			XK_i,	   togglescratch,  {.ui = 2 } },
+	{ MODKEY,            			XK_o,	   togglescratch,  {.ui = 3 } },
+	{ MODKEY,            			XK_x,	   togglescratch,  {.ui = 4 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
