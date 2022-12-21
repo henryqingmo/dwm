@@ -17,7 +17,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[] = {
     "monospace:size=10",
     "WenQuanYi Micro Hei:size=10:type=Regular:antialias=true:autohint=true",
-    "FantasqueSansMono Nerd Font Mono:pixelsize=16:antialias=true:autohint=true",
+    "FantasqueSansMono Nerd Font Mono:pixelsize=20:antialias=true:autohint=true",
 };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
