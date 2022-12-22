@@ -90,7 +90,6 @@ static const Layout layouts[] = {
 	{ "|M|",      centeredmaster },
 	{ ">M>",      centeredfloatingmaster },
 	{ "[D]",      deck },
- 
 };
 
 /* key definitions */
@@ -135,14 +134,14 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} },
-	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[5]} },
-	{ MODKEY|ShiftMask,             XK_e,      setlayout,      {.v = &layouts[6]} },
-	{ MODKEY|ShiftMask,             XK_w,      setlayout,      {.v = &layouts[7]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} }, // tiling
+	{ MODKEY|ShiftMask,             XK_w,      setlayout,      {.v = &layouts[1]} }, // float
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[2]} }, // monacle
+	{ MODKEY,                       XK_r,      setlayout,      {.v = &layouts[3]} }, // fibonacci
+	{ MODKEY|ShiftMask,             XK_r,      setlayout,      {.v = &layouts[4]} }, // dwindle
+	{ MODKEY,                       XK_e,      setlayout,      {.v = &layouts[5]} }, // centeredmaster
+	{ MODKEY|ShiftMask,             XK_e,      setlayout,      {.v = &layouts[6]} }, // centeredfloatingmaster
+	{ MODKEY,						XK_w,      setlayout,      {.v = &layouts[7]} }, // deck
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_f,      togglefullscr,  {0} },
