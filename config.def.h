@@ -3,9 +3,9 @@
 #include <X11/XF86keysym.h>
 
 /* volume */
-static const char *upvol[] = { "/usr/bin/amixer", "set", "Master", "5%+", NULL };
-static const char *downvol[] = { "/usr/bin/amixer", "set", "Master", "5%-", NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *upvol[]   = { "/usr/bin/pamixer", "-i", "5", NULL };
+static const char *downvol[] = { "/usr/bin/pamixer", "-d", "5", NULL };
+static const char *mutevol[] = { "/usr/bin/pamixer", "--toggle-mute", NULL };
 
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
