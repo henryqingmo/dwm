@@ -40,6 +40,8 @@ const char *spcmd2[] = {"st", "-n", "spranger", "-g", "144x41", "-e", "ranger", 
 const char *spcmd3[] = {"st", "-n", "spncmpcpp", "-g", "144x41", "-e", "ncmpcpp", NULL };
 const char *spcmd4[] = {"st", "-n", "sphtop", "-g", "144x41", "-e", "htop", NULL };
 const char *spcmd5[] = {"st", "-n", "spmixer", "-g", "144x41", "-e", "pulsemixer", NULL };
+const char *spcmd6[] = {"st", "-n", "spcalcurse", "-g", "144x41", "-e", "calcurse", NULL };
+
 static Sp scratchpads[] = {
 	/* name          cmd  */
 	{"spterm",      spcmd1},
@@ -47,6 +49,7 @@ static Sp scratchpads[] = {
 	{"spncmpcpp",   spcmd3},
 	{"sphtop",		spcmd4},
 	{"spmixer",		spcmd5},
+	{"spcalcurse",	spcmd6},
 };
 
 
@@ -70,7 +73,7 @@ static const Rule rules[] = {
 	{ NULL,		"spncmpcpp",NULL,		   SPTAG(2),  1,		  0,	       1,        -1 },
 	{ NULL,		"sphtop",	NULL,		   SPTAG(3),  1,		  0,	       1,        -1 },
 	{ NULL,		"spmixer",	NULL,		   SPTAG(4),  1,		  0,	       1,        -1 },
- 	/* class      instance    title       tags mask     isfloating   monitor */
+	{ NULL,		"spcalcurse",	NULL,	   SPTAG(5),  1,		  0,	       1,        -1 },
 };
 
 /* layout(s) */
@@ -156,6 +159,7 @@ static Key keys[] = {
 	{ MODKEY,            			XK_i,	   togglescratch,  {.ui = 2 } },
 	{ MODKEY,            			XK_o,	   togglescratch,  {.ui = 3 } },
 	{ MODKEY,            			XK_x,	   togglescratch,  {.ui = 4 } },
+	{ MODKEY,            			XK_m,	   togglescratch,  {.ui = 5 } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
